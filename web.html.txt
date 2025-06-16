@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6f0ff;
+      color: #003366;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #cce0ff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 51, 102, 0.3);
+      width: 350px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 15px 0;
+      border: 1px solid #3399ff;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+    button {
+      background-color: #0073e6;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+    .thank-you {
+      display: none;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #004080;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Feedback</h1>
+    <form id="feedbackForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+      <textarea id="comments" name="comments" placeholder="Your Feedback" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="thank-you" id="thankYouMessage">Thank you for your feedback!</div>
+  </div>
+
+  <script>
+    const form = document.getElementById('feedbackForm');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Normally here you'd send the form data to a server
+      // For now, just show thank you message and clear the form
+      form.style.display = 'none';
+      thankYouMessage.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
